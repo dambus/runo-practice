@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Lora:wght@400;700&display=swap");
+
+$f-lora: "Lora", serif;
+$f-spartan: "Spartan", sans-serif;
+
+body {
+  margin: 0 auto;
+  padding: 0 5rem;
+  max-width: 1440px;
+  font-family: $f-lora;
+}

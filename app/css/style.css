@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Lora:wght@400;700&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -174,35 +175,79 @@ html {
   content: "\e00d";
 }
 
-#site-header {
-  height: 80px;
+body {
+  margin: 0 auto;
+  padding: 0 5rem;
   max-width: 1440px;
+  font-family: "Lora", serif;
 }
-#site-header .navbar {
-  padding: 1rem;
+
+.site-header {
+  height: 600px;
+  max-width: 1440px;
+  background-image: url("../img/Image.png");
+}
+.site-header .navbar {
+  position: sticky;
+  height: 80px;
+  padding: 0 5rem;
+  background-color: rgba(0, 0, 0, 0.2);
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  color: white;
 }
-#site-header .navbar .logo {
+.site-header .navbar .logo {
   flex: 50%;
   display: inline-block;
 }
-#site-header .navbar .logo h1 {
-  font-size: 24px;
+.site-header .navbar .logo h1 {
+  font-family: "Spartan", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
 }
-#site-header .navbar .nav {
-  border: 1px solid red;
-  flex: 50%;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+.site-header .navbar .nav {
+  flex: 36%;
 }
-#site-header .navbar .nav ul {
+.site-header .navbar .nav ul {
   height: 100%;
   display: inline-block;
 }
-#site-header .navbar .nav ul > li {
+.site-header .navbar .nav ul > li {
   display: inline-block;
+  font-family: "Spartan", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+.site-header .navbar .nav ul.nav-links {
+  border-right: 1px solid silver;
+}
+.site-header .navbar .nav ul.nav-links li {
+  margin-right: 25px;
+}
+.site-header .navbar .nav ul.nav-links li:last-child {
+  margin-right: 17px;
+}
+.site-header .navbar .nav ul.nav-socials {
+  border-right: 1px solid silver;
+}
+.site-header .navbar .nav ul.nav-socials li.nav-social {
+  margin-right: 17px;
+}
+.site-header .navbar .nav ul.nav-socials li.nav-social:first-child {
+  margin-left: 17px;
+}
+.site-header .navbar .nav ul.search-icon {
+  margin-left: 17px;
+}
+.site-header .title-box {
+  position: relative;
+  border: 1px solid red;
+  width: calc(50% - 5rem);
+  margin-left: 5rem;
+  margin-top: calc(17rem - 80px);
+}
+.site-header .title-box--head-title {
+  color: white;
+  font-size: 36px;
+  line-height: 46px;
 }
