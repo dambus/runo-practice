@@ -4,8 +4,11 @@ $f-lora: "Lora", serif;
 $f-spartan: "Spartan", sans-serif;
 
 body {
-  margin: 0 auto;
-  padding: 0 5rem;
-  max-width: 1440px;
-  font-family: $f-lora;
+  padding: 0;
+  @include md {
+    margin: 0 auto;
+    padding: 0 5rem;
+    max-width: 1440px;
+    font-family: $f-lora;
+  }
 }

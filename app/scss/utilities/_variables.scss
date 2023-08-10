@@ -8,3 +8,51 @@ $ip: 420px;
 $xs: 350px;
 
 $transition-ease: 0.4s ease-in-out;
+
+// BREAKPOINTS
+$screen-xs-min: 350px;
+$screen-sm-min: 555px;
+$screen-md-min: 767px;
+$screen-lg-min: 991px;
+$screen-xl-min: 1199px;
+
+// small devices
+@mixin xs {
+  @media (min-width: $screen-xs-min) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: $screen-sm-min) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: $screen-md-min) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: $screen-lg-min) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: $screen-xl-min) {
+    @content;
+  }
+}
+
+// Custom devices
+@mixin rwd($screen) {
+  @media (min-width: $screen) {
+    @content;
+  }
+}

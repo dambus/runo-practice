@@ -2,10 +2,23 @@
   height: 600px;
   max-width: 1440px;
   background-image: url("../img/Image.png");
+  background-size: cover;
+  background-position: center;
+
+  @include md {
+    background-position: center;
+  }
+
+  @include lg {
+    background-size: cover;
+  }
   .navbar {
     position: sticky;
     height: 80px;
-    padding: 0 5rem;
+    padding: 0 1rem;
+    @include md {
+      padding: 0 5rem;
+    }
     background-color: rgba(black, 0.2);
     display: flex;
     align-items: center;
@@ -14,6 +27,9 @@
     .logo {
       flex: 50%;
       display: inline-block;
+      @include lg {
+        flex: 10%;
+      }
       h1 {
         font-family: $f-spartan;
         font-weight: 700;
@@ -22,53 +38,127 @@
     }
 
     .nav {
-      flex: 36%;
-      ul {
-        height: 100%;
-        display: inline-block;
+      display: none;
+
+      @include lg {
+        display: flex;
+        flex: 90%;
+        justify-content: flex-end;
+        flex-direction: row;
+        // flex-wrap: nowrap;
+        ul {
+          height: 100%;
+          display: inline-block;
+        }
+
+        ul > li {
+          display: inline-block;
+          font-family: $f-spartan;
+          font-size: 12px;
+          font-weight: 700;
+          // border: 1px solid red;
+        }
+        ul.nav-links {
+          border-right: 1px solid silver;
+          li {
+            margin-right: 25px;
+            &:last-child {
+              margin-right: 17px;
+            }
+          }
+        }
+        ul.nav-socials {
+          border-right: 1px solid silver;
+          li.nav-social {
+            margin-right: 17px;
+            font-size: 1rem;
+            &:first-child {
+              margin-left: 17px;
+            }
+          }
+        }
+        ul.search-icon {
+          margin-left: 17px;
+          li {
+            font-size: 1rem;
+          }
+        }
       }
 
-      ul > li {
-        display: inline-block;
-        font-family: $f-spartan;
-        font-size: 12px;
-        font-weight: 700;
-        // border: 1px solid red;
+      @include xl {
+        display: flex;
+        flex: 80%;
+        justify-content: flex-end;
       }
-      ul.nav-links {
-        border-right: 1px solid silver;
-        li {
-          margin-right: 25px;
-          &:last-child {
-            margin-right: 17px;
-          }
-        }
-      }
-      ul.nav-socials {
-        border-right: 1px solid silver;
-        li.nav-social {
-          margin-right: 17px;
-          &:first-child {
-            margin-left: 17px;
-          }
-        }
-      }
-      ul.search-icon {
-        margin-left: 17px;
+    }
+    .hamburger {
+      position: relative;
+      z-index: 100;
+      right: 1rem;
+      padding: 4px;
+      background: none;
+      cursor: pointer;
+
+      @include lg {
+        display: none;
       }
     }
   }
   .title-box {
     position: relative;
-    border: 1px solid red;
-    width: calc(50% - 5rem);
-    margin-left: 5rem;
+    width: calc(66% - 1rem);
+    margin-left: 1rem;
+    @include lg {
+      margin-left: 5rem;
+      width: calc(50% - 5rem);
+    }
     margin-top: calc(17rem - 80px);
 
-    &--head-title {
+    &--pre-title {
+      font-size: 14px;
+      font-size: 10px;
+      font-family: $f-spartan;
+      font-weight: 700;
+      line-height: 12px;
+      background: rgba(white, 0.15);
+      border-radius: 6px;
+      padding: 6px 10px;
       color: white;
-      font-size: 36px;
-      line-height: 46px;
+      display: inline;
+    }
+
+    &--head-title {
+      margin-top: 1rem;
+      color: white;
+      font-size: 28px;
+      line-height: 1.1;
+      @include md {
+        font-size: 36px;
+        line-height: 1.25;
+      }
+    }
+
+    &--post-title {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: row;
+      justify-items: flex-start;
+      color: white;
+
+      .date {
+        font-style: italic;
+        font-size: 12px;
+        line-height: 20px;
+      }
+      .dash {
+        margin: 0 12px;
+        min-width: 24px;
+      }
+      .text {
+        font-style: italic;
+        font-size: 12px;
+        line-height: 20px;
+      }
     }
   }
 }
