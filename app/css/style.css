@@ -355,3 +355,84 @@ body {
   font-size: 12px;
   line-height: 20px;
 }
+
+section.topics {
+  font-family: "Lora", serif;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  padding: 0 1rem;
+}
+@media (min-width: 767px) {
+  section.topics {
+    margin-top: 9rem;
+    padding: 0 5rem;
+    margin-bottom: 9rem;
+    max-width: calc(1440px - 10rem);
+  }
+}
+section.topics .section-heading {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 46px;
+  margin-bottom: 30px;
+}
+section.topics .section-tags {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+section.topics .section-tags ul {
+  list-style: none;
+}
+section.topics .section-tags ul li.tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  margin-right: 20px;
+  line-height: 25px;
+}
+section.topics .stories {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 767px) {
+  section.topics .stories {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+section.topics .stories .story {
+  max-width: 310px;
+  margin-right: 20px;
+  margin-bottom: 3rem;
+}
+section.topics .stories .story:last-child {
+  margin-right: 0;
+}
+section.topics .stories .story--img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+section.topics .stories .story--date {
+  margin-bottom: 1rem;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  color: #6c757d;
+}
+section.topics .stories .story--heading {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25px;
+  color: #495057;
+  margin-bottom: 1rem;
+}
+section.topics .stories .story--preview {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #6c757d;
+}
