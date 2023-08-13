@@ -21,13 +21,22 @@ section.topics {
   }
 
   .section-tags {
+    width: calc(100vw - 2rem);
+    @include md {
+      width: auto;
+    }
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
+    text-align: center;
+    @include lg {
+      justify-content: flex-start;
+    }
     margin-bottom: 30px;
     ul {
       list-style: none;
       li.tag {
+        cursor: pointer;
         display: inline-block;
         font-size: 12px;
         font-weight: 700;
@@ -37,14 +46,9 @@ section.topics {
     }
   }
   .stories {
-    // max-width: calc(100% - 2rem);
-    // @include md {
-    //   max-width: calc(100% - 140px);
-    // }
     display: grid;
     margin: 0;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    // gap: 1rem;
 
     .story {
       padding: 1rem;
@@ -236,4 +240,8 @@ section.picks {
   color: white;
   background: rgba(white, 0.2);
   border-radius: 8px;
+}
+
+.category--active {
+  color: #d4a373;
 }

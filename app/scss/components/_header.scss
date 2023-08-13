@@ -40,6 +40,16 @@
     .nav {
       display: none;
 
+      a {
+        color: inherit;
+        cursor: pointer;
+        text-decoration: none;
+        &:hover {
+          transform: scale(1.05);
+          transition: all 0.1s ease-in;
+        }
+      }
+
       @include lg {
         display: flex;
         flex: 90%;
@@ -66,6 +76,18 @@
               margin-right: 17px;
             }
           }
+          .active {
+            position: relative;
+            &::after {
+              position: absolute;
+              content: "";
+              border-bottom: 2px solid #d4a373;
+              left: 0px;
+              bottom: -6px;
+              width: 100%;
+              // height: 3px;
+            }
+          }
         }
         ul.nav-socials {
           border-right: 1px solid silver;
@@ -75,12 +97,21 @@
             &:first-child {
               margin-left: 17px;
             }
+            &:hover {
+              transform: scale(1.15);
+              cursor: pointer;
+              transition: all 0.2s ease;
+            }
           }
         }
         ul.search-icon {
           margin-left: 17px;
           li {
             font-size: 1rem;
+            &:hover {
+              transform: scale(1.15);
+              cursor: pointer;
+            }
           }
         }
       }
@@ -112,7 +143,10 @@
       margin-left: 5rem;
       width: calc(50% - 5rem);
     }
-    margin-top: calc(17rem - 80px);
+    margin-top: calc(12rem - 80px);
+    @include lg {
+      margin-top: calc(17rem - 80px);
+    }
 
     &--pre-title {
       // font-size: 14px;
