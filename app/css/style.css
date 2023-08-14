@@ -535,6 +535,8 @@ section.topics .stories {
   display: grid;
   margin: 0;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: start;
+  justify-content: space-between;
 }
 section.topics .stories .story {
   padding: 1rem;

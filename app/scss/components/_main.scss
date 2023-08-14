@@ -49,6 +49,8 @@ section.topics {
     display: grid;
     margin: 0;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: start;
+    justify-content: space-between;
 
     .story {
       padding: 1rem;
