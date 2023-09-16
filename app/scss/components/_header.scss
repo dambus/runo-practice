@@ -4,7 +4,10 @@
   background-image: url("../img/Image.png");
   background-size: cover;
   background-position: center;
-
+  position: relative;
+  border: 1px solid transparent;
+  top: -80px;
+  z-index: 1;
   @include md {
     background-position: center;
   }
@@ -12,132 +15,11 @@
   @include lg {
     background-size: cover;
   }
-  .navbar {
-    position: sticky;
-    height: 80px;
-    padding: 0 1rem;
-    @include md {
-      padding: 0 5rem;
-    }
-    background-color: rgba(black, 0.2);
-    display: flex;
-    align-items: center;
-    color: white;
 
-    .logo {
-      flex: 50%;
-      display: inline-block;
-      @include lg {
-        flex: 10%;
-      }
-      h1 {
-        font-family: $f-spartan;
-        font-weight: 700;
-        font-size: 20px;
-      }
-    }
-
-    .nav {
-      display: none;
-
-      a {
-        color: inherit;
-        cursor: pointer;
-        text-decoration: none;
-        &:hover {
-          transform: scale(1.05);
-          transition: all 0.1s ease-in;
-        }
-      }
-
-      @include lg {
-        display: flex;
-        flex: 90%;
-        justify-content: flex-end;
-        flex-direction: row;
-        // flex-wrap: nowrap;
-        ul {
-          height: 100%;
-          display: inline-block;
-        }
-
-        ul > li {
-          display: inline-block;
-          font-family: $f-spartan;
-          font-size: 12px;
-          font-weight: 700;
-          // border: 1px solid red;
-        }
-        ul.nav-links {
-          border-right: 1px solid silver;
-          li {
-            margin-right: 25px;
-            &:last-child {
-              margin-right: 17px;
-            }
-          }
-          .active {
-            position: relative;
-            &::after {
-              position: absolute;
-              content: "";
-              border-bottom: 2px solid #d4a373;
-              left: 0px;
-              bottom: -6px;
-              width: 100%;
-              // height: 3px;
-            }
-          }
-        }
-        ul.nav-socials {
-          border-right: 1px solid silver;
-          li.nav-social {
-            margin-right: 17px;
-            font-size: 1rem;
-            &:first-child {
-              margin-left: 17px;
-            }
-            &:hover {
-              transform: scale(1.15);
-              cursor: pointer;
-              transition: all 0.2s ease;
-            }
-          }
-        }
-        ul.search-icon {
-          margin-left: 17px;
-          li {
-            font-size: 1rem;
-            &:hover {
-              transform: scale(1.15);
-              cursor: pointer;
-            }
-          }
-        }
-      }
-
-      @include xl {
-        display: flex;
-        flex: 80%;
-        justify-content: flex-end;
-      }
-    }
-    .hamburger {
-      position: relative;
-      z-index: 100;
-      right: 1rem;
-      padding: 4px;
-      background: none;
-      cursor: pointer;
-
-      @include lg {
-        display: none;
-      }
-    }
-  }
   .title-box {
     position: relative;
-    width: calc(66% - 1rem);
+    width: calc(100% - 2rem);
+
     margin-left: 1rem;
     @include lg {
       margin-left: 5rem;
@@ -187,6 +69,16 @@
       .dash {
         margin: 0 12px;
         min-width: 24px;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          border-bottom: 1px solid white;
+          top: -6px;
+          left: 0;
+          width: 24px;
+          height: 16px;
+        }
       }
       .text {
         font-style: italic;
@@ -195,4 +87,134 @@
       }
     }
   }
+}
+
+.navbar {
+  height: 80px;
+  padding: 0 1rem;
+  z-index: 11;
+  position: sticky;
+  top: 0;
+  @include md {
+    padding: 0 5rem;
+  }
+  background-color: rgba(black, 0.2);
+  display: flex;
+  align-items: center;
+  color: white;
+
+  .logo {
+    flex: 50%;
+    display: inline-block;
+    z-index: 7;
+    @include lg {
+      flex: 10%;
+    }
+    h1 {
+      font-family: $f-spartan;
+      font-weight: 700;
+      font-size: 20px;
+    }
+  }
+
+  .nav {
+    display: none;
+
+    a {
+      color: inherit;
+      cursor: pointer;
+      text-decoration: none;
+      &:hover {
+        transform: scale(1.05);
+        transition: all 0.1s ease-in;
+      }
+    }
+
+    @include lg {
+      display: flex;
+      flex: 90%;
+      justify-content: flex-end;
+      flex-direction: row;
+      // flex-wrap: nowrap;
+      ul {
+        height: 100%;
+        display: inline-block;
+      }
+
+      ul > li {
+        display: inline-block;
+        font-family: $f-spartan;
+        font-size: 12px;
+        font-weight: 700;
+        // border: 1px solid red;
+      }
+      ul.nav-links {
+        border-right: 1px solid silver;
+        li {
+          margin-right: 25px;
+          &:last-child {
+            margin-right: 17px;
+          }
+        }
+        .active {
+          position: relative;
+          &::after {
+            position: absolute;
+            content: "";
+            border-bottom: 2px solid #d4a373;
+            left: 0px;
+            bottom: -6px;
+            width: 100%;
+            // height: 3px;
+          }
+        }
+      }
+      ul.nav-socials {
+        border-right: 1px solid silver;
+        li.nav-social {
+          margin-right: 17px;
+          font-size: 1rem;
+          &:first-child {
+            margin-left: 17px;
+          }
+          &:hover {
+            transform: scale(1.15);
+            cursor: pointer;
+            transition: all 0.2s ease;
+          }
+        }
+      }
+      ul.search-icon {
+        margin-left: 17px;
+        li {
+          font-size: 1rem;
+          &:hover {
+            transform: scale(1.15);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    @include xl {
+      display: flex;
+      flex: 80%;
+      justify-content: flex-end;
+    }
+  }
+  .hamburger {
+    position: relative;
+    z-index: 100;
+    right: 1rem;
+    padding: 4px;
+    background: none;
+    cursor: pointer;
+
+    @include lg {
+      display: none;
+    }
+  }
+}
+.black {
+  background-color: rgba(black, 0.85);
 }
